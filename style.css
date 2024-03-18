@@ -1,0 +1,11 @@
+body {
+  background-color: black;
+  color: aliceblue;
+}
+.heading {
+  text-align: center;
+}
+.headingobject {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 48px;
+}
