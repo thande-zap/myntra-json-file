@@ -14,10 +14,11 @@ async function webpage() {
     await page.goto(url, {
       waitUntil: "networkidle2",
     });
-    const source = await page
-      .$eval("body > script:nth-child(5)", (element) => element.innerHTML)
-      .replace("window.__myx = ", "");
-    fs.writeFile("/myntra.json", source);
+    const source = await page.$eval("body > script:nth-child(5)", (element) =>
+      element.innerHTML.replace("window.__myx = ", "")
+    );
+
+    fs.writeFile("myntra.json", source);
 
     await browser.close();
   } catch (error) {

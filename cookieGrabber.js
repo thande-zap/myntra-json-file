@@ -29,7 +29,6 @@ async function cookie() {
     const otp = await page.evaluate(() => {
       return prompt("Please enter the OTP:");
     });
-    let currentURL = page.url();
     await page.keyboard.press(otp[0]);
     await page.keyboard.press(otp[1]);
     await page.keyboard.press(otp[2]);
