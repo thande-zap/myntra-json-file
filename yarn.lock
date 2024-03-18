@@ -799,7 +799,7 @@ puppeteer-extra@*, puppeteer-extra@^3.3.6:
     debug "^4.1.1"
     deepmerge "^4.2.2"
 
-puppeteer@*, puppeteer@^22.5.0:
+puppeteer@*:
   version "22.5.0"
   resolved "https://registry.npmjs.org/puppeteer/-/puppeteer-22.5.0.tgz"
   integrity sha512-PNVflixb6w3FMhehYhLcaQHTCcNKVkjxekzyvWr0n0yBnhUYF0ZhiG4J1I14Mzui2oW8dGvUD8kbXj0GiN1pFg==

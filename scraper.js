@@ -1,9 +1,8 @@
 import puppeteer from "puppeteer-extra";
 import stealth from "puppeteer-extra-plugin-stealth";
 import { promises as fs } from "fs";
+import { url } from "./auth.js";
 puppeteer.use(stealth());
-
-const url = "https://www.myntra.com/accessories?f=Categories%3AGold%20Coin";
 
 async function webpage() {
   try {
