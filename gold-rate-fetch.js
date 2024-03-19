@@ -57,7 +57,7 @@ async function fetcher() {
       '22K': (el3 / 10) * 0.916,
     });
 
-    fs.writeFile('items.json', JSON.stringify(items), 'utf-8', (err) => {
+    fs.writeFile('gold-rate.json', JSON.stringify(items), 'utf-8', (err) => {
       console.log(err);
     });
     await browser.close();
