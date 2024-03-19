@@ -1,4 +1,4 @@
-auth.js
-url.js
+/db/auth.js
+/db/url.js
 cookies/
 node_modules/
