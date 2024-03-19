@@ -1,24 +1,24 @@
-import puppeteer from "puppeteer-extra";
-import stealth from "puppeteer-extra-plugin-stealth";
-import { promises as fs } from "fs";
-import { url } from "./auth.js";
+import puppeteer from 'puppeteer-extra';
+import stealth from 'puppeteer-extra-plugin-stealth';
+import { promises as fs } from 'fs';
+import { url } from './auth.js';
 puppeteer.use(stealth());
 
 async function webpage() {
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    const cookiesString = await fs.readFile("cookies/cookies.json");
+    const cookiesString = await fs.readFile('cookies/cookies.json');
     const cookies = JSON.parse(cookiesString);
     await page.setCookie(...cookies);
     await page.goto(url, {
-      waitUntil: "networkidle2",
+      waitUntil: 'networkidle2',
     });
-    const source = await page.$eval("body > script:nth-child(5)", (element) =>
-      element.innerHTML.replace("window.__myx = ", "")
+    const source = await page.$eval('body > script:nth-child(5)', (element) =>
+      element.innerHTML.replace('window.__myx = ', '')
     );
 
-    fs.writeFile("myntra.json", source);
+    fs.writeFile('myntra.json', source);
 
     await browser.close();
   } catch (error) {
