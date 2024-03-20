@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-extra';
 import stealth from 'puppeteer-extra-plugin-stealth';
 import { promises as fs } from 'fs';
-import { url } from './auth.js';
+import { url } from '../db/auth.js';
 puppeteer.use(stealth());
 
 async function webpage() {
@@ -18,7 +18,7 @@ async function webpage() {
       element.innerHTML.replace('window.__myx = ', '')
     );
 
-    fs.writeFile('../db/myntra.json', source);
+    fs.writeFile('db/myntra.json', source);
 
     await browser.close();
   } catch (error) {
