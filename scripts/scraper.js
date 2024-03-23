@@ -8,7 +8,7 @@ async function webpage() {
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    const cookiesString = await fs.readFile('cookies/cookies.json');
+    const cookiesString = await fs.readFile('../cookies/cookies.json');
     const cookies = JSON.parse(cookiesString);
     await page.setCookie(...cookies);
     await page.goto(url, {
@@ -18,7 +18,7 @@ async function webpage() {
       element.innerHTML.replace('window.__myx = ', '')
     );
 
-    fs.writeFile('db/myntra.json', source);
+    fs.writeFile('../db/myntra.json', source);
 
     await browser.close();
   } catch (error) {

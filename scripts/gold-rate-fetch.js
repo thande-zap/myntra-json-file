@@ -33,14 +33,18 @@ async function fetcher() {
     items.push({ name: 'GADGET360', '24K': el1, '22K': el1 * 0.916 });
 
     //IBJA CODE HERE
-    await page.goto(url[2], {
-      waitUntil: 'networkidle2',
-    });
-    const el2 = await page.$eval('#lblrate24K', (element) =>
-      parseFloat(element.innerHTML.replace(/,/g, ''))
-    );
+    try {
+      await page.goto(url[2], {
+        waitUntil: 'networkidle2',
+      });
+      const el2 = await page.$eval('#lblrate24K', (element) =>
+        parseFloat(element.innerHTML.replace(/,/g, ''))
+      );
 
-    items.push({ name: 'IBJA RATES', '24K': el2, '22K': el2 * 0.916 });
+      items.push({ name: 'IBJA RATES', '24K': el2, '22K': el2 * 0.916 });
+    } catch (error) {
+      items.push({ name: 'IBJA RATES', '24K': 'ERR', '22K': 'ERR' });
+    }
 
     //ECONOMIC TIMES CODE HERE
     await page.goto(url[3], {
@@ -57,9 +61,14 @@ async function fetcher() {
       '22K': (el3 / 10) * 0.916,
     });
 
-    fs.writeFile('db/gold-rate.json', JSON.stringify(items), 'utf-8', (err) => {
-      console.log(err);
-    });
+    fs.writeFile(
+      '../db/gold-rate.json',
+      JSON.stringify(items),
+      'utf-8',
+      (err) => {
+        console.log(err);
+      }
+    );
     await browser.close();
   } catch (error) {
     console.log(error);
