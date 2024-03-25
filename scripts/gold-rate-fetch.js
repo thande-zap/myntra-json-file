@@ -23,7 +23,7 @@ async function fetcher() {
       '#fragment-9402-kpwp > div > div > div.today-mmtcpamp-value.centered-div > span',
       (element) => parseFloat(element.innerHTML.replace(/,/g, ''))
     );
-    items.mmtc = { itemName: 'MMTC PAMP', '24K': el0, '22K': el0 * 0.916 };
+    items.mmtc = { Source: 'MMTC PAMP', '24K': el0, '22K': el0 * 0.916 };
 
     //GADGETS360 CODE HERE
     await page.goto(url.gadgets360, {
@@ -33,7 +33,7 @@ async function fetcher() {
       '#carat24 > div._cptbl._cptblm > table > tbody > tr:nth-child(1) > td._lft',
       (element) => parseFloat(element.innerHTML.replace(/[₹,]/g, ''))
     );
-    items.gadgets360 = { name: 'GADGETS360', '24K': el1, '22K': el1 * 0.916 };
+    items.gadgets360 = { Source: 'GADGETS360', '24K': el1, '22K': el1 * 0.916 };
 
     //IBJA CODE HERE
     await page.goto(url.ibja, {
@@ -42,7 +42,7 @@ async function fetcher() {
     const el2 = await page.$eval('#lblrate24K', (element) =>
       parseFloat(element.innerHTML.replace(/,/g, ''))
     );
-    items.ibja = { name: 'IBJA RATES', '24K': el2, '22K': el2 * 0.916 };
+    items.ibja = { Source: 'IBJA RATES', '24K': el2, '22K': el2 * 0.916 };
 
     //ECONOMIC TIMES CODE HERE
 
@@ -55,13 +55,13 @@ async function fetcher() {
         (element) => parseFloat(element.innerHTML.replace(/,/g, ''))
       );
       items.et = {
-        name: 'ECONOMIC TIMES',
+        Source: 'ECONOMIC TIMES',
         '24K': el3 / 10,
         '22K': (el3 / 10) * 0.916,
       };
     } catch (error) {
       items.et = {
-        name: 'ECONOMIC TIMES',
+        Source: 'ECONOMIC TIMES',
         '24K': null,
         '22K': null,
       };

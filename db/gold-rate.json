@@ -1,6 +1,6 @@
 {
-  "mmtc": { "itemName": "MMTC PAMP", "24K": 6523, "22K": 5975.068 },
-  "gadgets360": { "name": "GADGET360", "24K": 6627, "22K": 6070.332 },
-  "ibja": { "name": "IBJA RATES", "24K": 6627, "22K": 6070.332 },
-  "et": { "name": "ECONOMIC TIMES", "24K": "ERR", "22K": "ERR" }
+  "mmtc": { "Source": "MMTC PAMP", "24K": 6523, "22K": 5975.068 },
+  "gadgets360": { "Source": "GADGETS360", "24K": 6627, "22K": 6070.332 },
+  "ibja": { "Source": "IBJA RATES", "24K": 6627, "22K": 6070.332 },
+  "et": { "Source": "ECONOMIC TIMES", "24K": null, "22K": null }
 }
