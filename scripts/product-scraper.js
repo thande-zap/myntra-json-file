@@ -18,7 +18,7 @@ async function webpage() {
       element.innerHTML.replace('window.__myx = ', '')
     );
 
-    fs.writeFile('../db/myntra.json', source);
+    fs.writeFile('../db/product-list.json', source);
 
     await browser.close();
   } catch (error) {
