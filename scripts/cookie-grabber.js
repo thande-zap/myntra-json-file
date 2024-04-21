@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-extra';
 import stealth from 'puppeteer-extra-plugin-stealth';
 import { promises as fs } from 'fs';
-import { user } from './auth.js';
+import { user } from '../db/auth.js';
 puppeteer.use(stealth());
 
 const sleep = (ms) => {
@@ -39,7 +39,7 @@ async function cookie() {
     await sleep(10000);
     const cookies = await page.cookies();
     await fs.writeFile(
-      'cookies/cookies.json',
+      '../cookies/cookies.json',
       JSON.stringify(cookies, null, 2)
     );
     await browser.close();
