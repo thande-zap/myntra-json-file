@@ -1,10 +1,1 @@
-{
-  "mmtc": { "Source": "MMTC PAMP", "24K": 7158, "22K": 6556.728 },
-  "gadgets360": {
-    "Source": "GADGETS360",
-    "24K": 7286,
-    "22K": 6673.97
-  },
-  "ibja": { "Source": "IBJA RATES", "24K": 7286, "22K": 6673.976000000001 },
-  "et": { "Source": "ECONOMIC TIMES", "24K": 7390, "22K": 6769.240000000001 }
-}
+{"mmtc":{"Source":"MMTC PAMP","24K":7025,"22K":6434.900000000001},"gadgets360":{"Source":"GADGETS360","24K":7151,"22K":6550.316000000001},"ibja":{"Source":"IBJA RATES","24K":7151,"22K":6550.316000000001},"et":{"Source":"ECONOMIC TIMES","24K":7337,"22K":6720.692}}
