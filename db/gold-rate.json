@@ -1,5 +1,9 @@
 {
-  "gadgets360": { "Source": "GADGETS360", "24K": 7398, "22K": 6776.568 },
-  "ibja": { "Source": "IBJA RATES", "24K": 7398, "22K": 6776.568 },
-  "et": { "Source": "ECONOMIC TIMES", "24K": 7484, "22K": 6855.344 }
+  "gadgets360": {
+    "Source": "GADGETS360",
+    "24K": 7193,
+    "22K": 6588.7880000000005
+  },
+  "ibja": { "Source": "IBJA RATES", "24K": 7193, "22K": 6588.7880000000005 },
+  "et": { "Source": "ECONOMIC TIMES", "24K": 7309, "22K": 6695.044 }
 }
