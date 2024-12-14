@@ -3,3 +3,4 @@
 cookies/
 node_modules/
 testing.js
+.DS_Store
